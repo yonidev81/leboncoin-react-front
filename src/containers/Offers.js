@@ -33,24 +33,22 @@ const Offers = () => {
 
       {data.offers.map((offer, index) => {
         return (
-          <>
-            <Link key={offer._id} to={"/offer/" + offer._id}>
-              <div className="card">
-                <div className="pictures">
-                  <img
-                    style={{ "object-fit": "cover" }}
-                    src={offer.picture.url}
-                    alt="pictures"
-                  />
-                </div>
-                <div>
-                  <p>{offer.title}</p>
-                  <p>{offer.price} €</p>
-                  <p>{offer.picture.created_at}</p>
-                </div>
+          <div className="container">
+            <Link className="card" key={offer._id} to={"/offer/" + offer._id}>
+              <div className="pictures">
+                <img
+                  style={{ "object-fit": "cover" }}
+                  src={offer.picture.secure_url}
+                  alt="pictures"
+                />
+              </div>
+              <div className="offerdescription">
+                <p>{offer.title}</p>
+                <p>{offer.price} €</p>
+                <p>{offer.picture.created_at}</p>
               </div>
             </Link>
-          </>
+          </div>
         );
       })}
     </div>

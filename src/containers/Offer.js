@@ -28,10 +28,26 @@ const Offer = () => {
   return isLoading ? (
     <span> Downloading ...</span>
   ) : (
-    <div>
-      {data.title}
-      {data.description}
-      {data.price}
+    <div className="container">
+      <div className="offer">
+        <div className="pictureoffer">
+          {" "}
+          <img
+            style={{ "object-fit": "cover" }}
+            src={data.picture.url}
+            alt="pictures"
+          />{" "}
+        </div>
+
+        <p className="title">{data.title}</p>
+        <p className="price">{data.price} €</p>
+        <div className="date">{data.picture.created_at}</div>
+      </div>
+
+      <div className="description">
+        <p>Description</p>
+        {data.description}
+      </div>
     </div>
   );
 };

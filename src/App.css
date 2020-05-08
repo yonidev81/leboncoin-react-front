@@ -1,8 +1,14 @@
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #fafafa;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 1024px;
+  margin: 0 auto;
 }
 
 img {
@@ -17,12 +23,11 @@ img {
   margin-bottom: 20px;
 }
 
-.container {
+/* .container {
   width: 900px;
   margin: 0;
   /* padding: 30px; */
-  background-color: orange;
-}
+/* } */
 
 .subheader {
   width: 1024px;
@@ -59,9 +64,56 @@ input {
 }
 
 .card {
+  width: 1000px;
+  height: 150px;
   border-radius: 10px;
   display: flex;
   border-radius: 10px;
-  background-color: #ffe8df;
+  box-shadow: 3px 3px 3px 3px lightgray;
   margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.offer {
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 3px 3px lightgray;
+}
+
+.pictureoffer img {
+  width: 700px;
+  height: 390px;
+  align-content: center;
+  justify-content: center;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.date {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.description {
+  font-size: 19px;
+  background-color: lightgrey;
+  margin-top: 0;
+  border-radius: 10px;
+}
+
+.offerdescription {
+  color: black;
 }
