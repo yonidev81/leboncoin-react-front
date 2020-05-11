@@ -1,7 +1,11 @@
 import React from "react";
 
 const Footer = () => {
-  return <div> Réplique de Leboncoin by Yoni</div>;
+  return (
+    <div className="footer">
+      <div> Réplique de Leboncoin codée par Yoni</div>
+    </div>
+  );
 };
 
 export default Footer;

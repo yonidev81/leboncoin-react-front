@@ -28,7 +28,7 @@ const Offer = () => {
   return isLoading ? (
     <span> Downloading ...</span>
   ) : (
-    <div className="container">
+    <div className="containeroffer">
       <div className="offer">
         <div className="pictureoffer">
           {" "}
@@ -46,7 +46,7 @@ const Offer = () => {
 
       <div className="description">
         <p>Description</p>
-        {data.description}
+        <span> {data.description} </span>
       </div>
     </div>
   );

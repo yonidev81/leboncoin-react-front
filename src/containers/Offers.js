@@ -29,11 +29,16 @@ const Offers = () => {
     <span>Downloading ...</span>
   ) : (
     <div>
+      <section className="subheader">
+        <input placeholder="Que recherchez-vous ?" type="text" />
+        <button> Rechercher </button>
+      </section>
+
       {/* .map permet de parcourir un tableau et d'afficher ses propriétés/Clés *{/*  */}
 
       {data.offers.map((offer, index) => {
         return (
-          <div className="container">
+          <div className="containeroffers">
             <Link className="card" key={offer._id} to={"/offer/" + offer._id}>
               <div className="pictures">
                 <img
@@ -43,9 +48,9 @@ const Offers = () => {
                 />
               </div>
               <div className="offerdescription">
-                <p>{offer.title}</p>
-                <p>{offer.price} €</p>
-                <p>{offer.picture.created_at}</p>
+                <p className="titleoffers">{offer.title}</p>
+                <p className="priceoffers">{offer.price} €</p>
+                <p className="dateoffers">{offer.picture.created_at}</p>
               </div>
             </Link>
           </div>
