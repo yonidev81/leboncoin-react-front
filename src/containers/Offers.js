@@ -28,14 +28,35 @@ const Offers = () => {
   return isLoading ? (
     <span>Downloading ...</span>
   ) : (
-    <div>
-      <section className="subheader">
-        <input placeholder="Que recherchez-vous ?" type="text" />
-        <button> Rechercher </button>
-      </section>
+    <>
+      <div className="containersearch">
+        <div>
+          <section className="subheader">
+            <input placeholder="Que recherchez-vous ?" type="text" />
+            <button> Rechercher </button>
+          </section>
+        </div>
 
+        <div className="filter">
+          <p>Prix entre</p> &nbsp;{" "}
+          <div>
+            <input placeholder="prix min" type="text" />
+          </div>{" "}
+          &nbsp;
+          <p>et</p>
+          &nbsp;
+          <div>
+            {" "}
+            <input placeholder="prix max" type="text" />
+          </div>{" "}
+          &nbsp;
+          <div className="tri">
+            {" "}
+            <input placeholder="Tri: plus récentes" type="text" />
+          </div>
+        </div>
+      </div>
       {/* .map permet de parcourir un tableau et d'afficher ses propriétés/Clés *{/*  */}
-
       {data.offers.map((offer, index) => {
         return (
           <div className="containeroffers">
@@ -56,7 +77,7 @@ const Offers = () => {
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 

@@ -39,45 +39,53 @@ const Signup = () => {
   return (
     <div className="signup">
       <form onSubmit={handleSubmit}>
-        <p> Pseudo</p>
-        <input
-          onChange={(event) => {
-            setUsername(event.target.value);
-          }}
-          type="text"
-          placeholder="pseudo"
-        />
-        <p> Adresse email</p>
-        <input
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-          type="text"
-          placeholder="email"
-        />
-        <p> Mot de passe</p>
-        <input
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-          type="password"
-          placeholder="password"
-        />
-        <p> Confirmer le mot de passe</p>
-        <input
-          onChange={(event) => {
-            setConfirmPassword(event.target.value);
-          }}
-          type="password"
-          placeholder="confirm password"
-        />
-        <input
-          type="checkbox"
-          onChange={() => {
-            setCheckBox(!checkbox);
-          }}
-        />
-        <span> Accepter les CGC et CGU </span>
+        <div className="signup">
+          <p> Créez un compte </p>
+
+          <p> Pseudo *</p>
+          <input
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+            type="text"
+            placeholder="pseudo"
+          />
+
+          <p> Adresse email *</p>
+          <input
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+            type="text"
+            placeholder="email"
+          />
+          <p> Mot de passe *</p>
+          <input
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+            type="password"
+            placeholder="password"
+          />
+          <p> Confirmer le mot de passe *</p>
+          <input
+            onChange={(event) => {
+              setConfirmPassword(event.target.value);
+            }}
+            type="password"
+            placeholder="confirm password"
+          />
+        </div>
+        <div>
+          {" "}
+          <input
+            type="checkbox"
+            onChange={() => {
+              setCheckBox(!checkbox);
+            }}
+          />{" "}
+          <p> Accepter les CGC et CGU</p>
+        </div>
 
         <button type="submit"> Créer un compte </button>
       </form>
