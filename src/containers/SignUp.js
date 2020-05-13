@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Signup = () => {
+const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [checkbox, setCheckBox] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     if (checkbox) {
       // requête vers le serveur pour créer un user
+      console.log(password, confirmPassword);
       if (password === confirmPassword) {
         const response = await axios.post(
           "https://leboncoin-api.herokuapp.com/user/sign_up",
@@ -23,7 +26,10 @@ const Signup = () => {
           }
         );
 
-        console.log(response.data);
+        console.log("2 ====>", response.data);
+        Cookies.set("userToken", response.data.token, { expires: 2000 });
+        setUser(response.data.token);
+        history.push("/");
       } else {
         alert("Vos mots de passe ne sont pas identiques");
       }
@@ -76,6 +82,7 @@ const Signup = () => {
             placeholder="confirm password"
           />
         </div>
+
         <div>
           {" "}
           <input
@@ -87,7 +94,7 @@ const Signup = () => {
           <p> Accepter les CGC et CGU</p>
         </div>
 
-        <button type="submit"> Créer un compte </button>
+        <button type="submit">Créer un compte</button>
       </form>
     </div>
   );

@@ -32,7 +32,7 @@ const Offers = () => {
       <div className="containersearch">
         <div>
           <section className="subheader">
-            <input placeholder="Que recherchez-vous ?" type="text" />
+            <input placeholder="🔍Que recherchez-vous ?" type="text" />
             <button> Rechercher </button>
           </section>
         </div>

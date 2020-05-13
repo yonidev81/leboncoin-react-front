@@ -28,7 +28,6 @@ const Header = ({ user, setUser }) => {
       </div>
 
       <div>
-        {/* {user === null && <Redirect to="/" />} */}
         {user ? (
           <button
             onClick={() => {
@@ -43,8 +42,15 @@ const Header = ({ user, setUser }) => {
             Se déconnecter
           </button>
         ) : (
-          <Link to="log_in"> Se connecter</Link>
+          <button
+            onClick={() => {
+              history.push("/log_in");
+            }}
+          >
+            Se connecter
+          </button>
         )}
+        <Link to="/publish"> Déposer une annonce </Link>
       </div>
     </>
   );
